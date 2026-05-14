@@ -2,78 +2,61 @@
 
 A Windows desktop application for batch converting Excel files to PDF using Excel’s native Print-to-PDF functionality.
 
-The application is built with .NET 8 (WPF) and uses late-bound Excel COM automation to avoid Office Interop version issues while maintaining perfect layout fidelity.
+![Language](https://img.shields.io/badge/language-C%23-blue.svg)
 
----
+## 🎯 What This Project Does
+ExcelBatchPdfExporter allows users to batch convert multiple Excel workbooks into PDF files with a simple WPF GUI. It leverages Excel's built-in `ExportAsFixedFormat` functionality while ensuring layout fidelity through late-bound Excel COM automation.
 
-## Features
+## ⚙️ Tech Stack
+| Technology      | Description                      |
+|-----------------|----------------------------------|
+| C#              | Programming language used        |
+| .NET 8         | Framework for building applications|
+| WPF             | UI framework for desktop apps    |
 
-- Batch convert multiple Excel files in one operation
-- Global configuration to export a specific worksheet index across all files
-- Automatic validation and warning for files missing the selected sheet
-- Save PDFs next to input files or in a single chosen output folder
-- Deterministic output naming:
-  example: 
-  exceldocs-1.pdf
+## ✨ Features
+- 📄 Batch convert multiple Excel files in one operation
+- ⚙️ Global configuration to export a specific worksheet index across all files
+- ⚠️ Automatic validation and warning for files missing the selected sheet
+- 📁 Save PDFs next to input files or in a single chosen output folder
+- 🔄 Deterministic output naming (e.g., `exceldocs-1.pdf`)
+- 🔒 Optional overwrite protection
+- 📥 Uses Excel’s native `ExportAsFixedFormat` PDF engine
 
-- Optional overwrite protection
-- Uses Excel’s native `ExportAsFixedFormat` PDF engine
-
----
-
-## Screenshots
-
-This section shows the application workflow from start to finish.
-
-### Main application window
-Shows the application immediately after launch.
-
-![Main application window](docs/screenshots/Main_Window.png)
-
----
-
-### Adding Excel files for batch processing
-Demonstrates adding multiple Excel files to the batch list.
-
-![Files added](docs/screenshots/Files_Added.png)
-
----
-
-### Output folder and global sheet configuration
-Shows selection of an output folder and configuration of the global sheet index.
-
-![Output settings](docs/screenshots/Output_Settings.png)
-
----
-
-### Ready to convert all files
-Illustrates the application fully configured and ready to start batch conversion.
-
-![Batch conversion ready](docs/screenshots/Batch_Convert.png)
-
----
-
-### Missing sheet warning
-Example warning shown when one or more files do not contain the selected sheet.
-
-![Missing sheet warning](docs/screenshots/Missing_Sheets_Warning.png)
-
----
-
-## Requirements
-
+## 🚀 Getting Started
+### Prerequisites
 - Windows
 - Microsoft Excel installed
 - .NET 8 SDK
 
-Excel must be installed on the machine running the application, as the tool automates Excel directly.
-
----
-
-## How to Run
-
-From the repository root, run:
-
+### Commands
+To run the application, execute:
 ```powershell
 dotnet run --project src\ExcelBatchPdfExporter.Gui
+```
 
+## 🛠️ What Changed In This Update
+Recent commits include:
+- Added a directory for documentation and screenshots.
+- Updated the README file to provide more information about the project.
+- Initial commit of the Excel batch PDF exporter application.
+
+## 🏗️ Architecture
+```
++----------------------+   +-------------------------+
+|   ExcelBatchPdfExporter  |<--|   Microsoft Excel      |
+|   (WPF GUI)          |   |   (COM Automation)     |
++----------------------+   +-------------------------+
+           |                            |
+           |                            |
+           |                            |
++----------------------+   +-------------------------+
+|      PDF Files       |   |  User Input Files       |
++----------------------+   +-------------------------+
+```
+
+## 🤝 Contributing
+Contributions are welcome! Please submit a pull request or open an issue for discussion.
+
+## 📄 License
+This project is currently licensed under the MIT License. Please check the repository for more details.
